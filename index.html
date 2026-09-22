@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vértice – controle financeiro pessoal: visão geral das suas finanças.">
+  <title>Visão geral | Vértice</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <!-- CSS gerado pelo Tailwind (npm run build) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="min-h-screen lg:flex">
+
+    <!-- ================= MENU LATERAL ================= -->
+    <aside class="bg-escuro text-white lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-60 lg:flex-col lg:px-5 lg:py-7">
+      <div class="flex items-center justify-between px-4 py-4 lg:mb-7 lg:p-0">
+        <a href="index.html" class="flex items-center gap-3 text-xl font-extrabold">
+          <img src="logo.svg" alt="" class="h-8 w-8">
+          Vértice
+        </a>
+        <!-- avatar visível só no celular -->
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#3B4A6E] text-sm font-bold lg:hidden" title="Ryan Alves">RA</span>
+      </div>
+
+      <nav aria-label="Menu principal" class="flex gap-1 overflow-x-auto px-4 pb-3 lg:flex-col lg:overflow-visible lg:p-0">
+        <a href="index.html" class="menu-item ativo" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          Visão geral
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h13l-3-3M17 17H4l3 3"/></svg>
+          Transações
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+          Nova transação
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+          Investimentos
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+          Metas
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+          Dívidas
+        </a>
+      </nav>
+
+      <!-- usuário (desktop) -->
+      <div class="mt-auto hidden items-center gap-3 border-t border-escuro-linha pt-5 lg:flex">
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#3B4A6E] text-sm font-bold">RA</span>
+        <div>
+          <p class="text-sm font-semibold">Ryan Alves</p>
+          <p class="text-xs text-escuro-texto">Conta pessoal</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ================= CONTEÚDO ================= -->
+    <main class="flex-1 space-y-6 p-4 sm:p-6 lg:ml-60 lg:px-10 lg:py-8">
+
+      <!-- Cabeçalho -->
+      <header class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1>Olá, Ryan</h1>
+          <p class="mt-1 text-sm text-texto-suave">Resumo de setembro de 2026</p>
+        </div>
+        <a href="#" class="btn-primario w-full sm:w-auto">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Nova transação
+        </a>
+      </header>
+
+      <!-- Indicadores -->
+      <section aria-label="Indicadores do mês" class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <article class="card">
+          <p class="kpi-rotulo">Saldo atual</p>
+          <p class="kpi-valor">R$ 8.450,20</p>
+        </article>
+        <article class="card">
+          <p class="kpi-rotulo">Receitas do mês</p>
+          <p class="kpi-valor text-receita">R$ 6.200,00</p>
+        </article>
+        <article class="card">
+          <p class="kpi-rotulo">Despesas do mês</p>
+          <p class="kpi-valor text-despesa">R$ 3.184,75</p>
+        </article>
+        <article class="card">
+          <p class="kpi-rotulo">Investido</p>
+          <p class="kpi-valor">R$ 15.300,00</p>
+        </article>
+      </section>
+
+      <!-- Gráfico + últimas transações -->
+      <section class="grid grid-cols-1 gap-5 xl:grid-cols-3">
+
+        <article class="card flex flex-col xl:col-span-2">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h2>Receitas x Despesas</h2>
+            <div class="flex gap-4 text-sm text-texto-suave">
+              <span class="flex items-center gap-1.5"><i class="legenda bg-receita"></i>Receitas</span>
+              <span class="flex items-center gap-1.5"><i class="legenda bg-despesa-grafico"></i>Despesas</span>
+            </div>
+          </div>
+
+          <div class="mt-6 flex h-64 items-end justify-between border-b border-borda xl:h-auto xl:flex-1" role="img"
+               aria-label="Gráfico de receitas e despesas de abril a setembro">
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[143px]"></span><span class="barra-despesa h-[104px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Abr</span>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[161px]"></span><span class="barra-despesa h-[125px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Mai</span>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[151px]"></span><span class="barra-despesa h-[135px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Jun</span>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[182px]"></span><span class="barra-despesa h-[117px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Jul</span>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[172px]"></span><span class="barra-despesa h-[130px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Ago</span>
+            </div>
+            <div class="flex flex-1 flex-col items-center gap-2">
+              <div class="flex items-end gap-1.5"><span class="barra-receita h-[208px]"></span><span class="barra-despesa h-[109px]"></span></div>
+              <span class="pb-2 text-xs text-texto-suave sm:text-sm">Set</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="mb-2 flex items-center justify-between">
+            <h2>Últimas transações</h2>
+            <a href="#" class="text-sm font-semibold text-primaria hover:underline">Ver todas</a>
+          </div>
+          <ul>
+            <li class="transacao">
+              <div><p class="font-semibold">Salário</p><p class="text-xs text-texto-suave">Receita · 05/09</p></div>
+              <p class="whitespace-nowrap font-bold text-receita">+ R$ 5.000,00</p>
+            </li>
+            <li class="transacao">
+              <div><p class="font-semibold">Supermercado</p><p class="text-xs text-texto-suave">Alimentação · 15/09</p></div>
+              <p class="whitespace-nowrap font-bold text-despesa">- R$ 412,30</p>
+            </li>
+            <li class="transacao">
+              <div><p class="font-semibold">Aluguel</p><p class="text-xs text-texto-suave">Moradia · 05/09</p></div>
+              <p class="whitespace-nowrap font-bold text-despesa">- R$ 1.500,00</p>
+            </li>
+            <li class="transacao">
+              <div><p class="font-semibold">Freelance</p><p class="text-xs text-texto-suave">Receita · 14/09</p></div>
+              <p class="whitespace-nowrap font-bold text-receita">+ R$ 1.200,00</p>
+            </li>
+            <li class="transacao">
+              <div><p class="font-semibold">Streaming</p><p class="text-xs text-texto-suave">Lazer · 01/09</p></div>
+              <p class="whitespace-nowrap font-bold text-despesa">- R$ 39,90</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Gastos por categoria -->
+      <section class="card">
+        <div class="flex items-center justify-between">
+          <h2>Gastos por categoria</h2>
+          <span class="text-sm text-texto-suave">Setembro</span>
+        </div>
+        <div class="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="flex justify-between text-sm"><span class="font-semibold">Moradia</span><span class="text-texto-suave">47%</span></div>
+            <div class="progresso my-2"><span class="progresso-preenchido w-[47%]"></span></div>
+            <p class="text-xs text-texto-suave">R$ 1.500,00</p>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span class="font-semibold">Alimentação</span><span class="text-texto-suave">27%</span></div>
+            <div class="progresso my-2"><span class="progresso-preenchido w-[27%]"></span></div>
+            <p class="text-xs text-texto-suave">R$ 864,00</p>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span class="font-semibold">Transporte</span><span class="text-texto-suave">14%</span></div>
+            <div class="progresso my-2"><span class="progresso-preenchido w-[14%]"></span></div>
+            <p class="text-xs text-texto-suave">R$ 450,00</p>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm"><span class="font-semibold">Lazer</span><span class="text-texto-suave">12%</span></div>
+            <div class="progresso my-2"><span class="progresso-preenchido w-[12%]"></span></div>
+            <p class="text-xs text-texto-suave">R$ 370,00</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="pb-2 text-center text-xs text-texto-suave">
+        © 2026 Vértice – Projeto acadêmico FIAP · Ryan Alves
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
