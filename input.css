@@ -1,0 +1,81 @@
+/* =========================================================
+   Vértice – arquivo-fonte do CSS (Tailwind)
+   Gera o arquivo final style.css com: npm run build
+   ========================================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base: estilos gerais da página ---------- */
+@layer base {
+  body {
+    @apply bg-fundo font-sans text-texto antialiased;
+  }
+  h1 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+  h2 {
+    @apply text-lg font-semibold;
+  }
+}
+
+/* ---------- Componentes reutilizáveis (identidade visual) ---------- */
+@layer components {
+  /* Card branco padrão */
+  .card {
+    @apply rounded-2xl border border-borda bg-white p-6;
+  }
+
+  /* Botão principal */
+  .btn-primario {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primaria px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-primaria-escura focus:outline-none focus:ring-4 focus:ring-primaria/30;
+  }
+
+  /* Itens do menu lateral */
+  .menu-item {
+    @apply flex items-center gap-3 whitespace-nowrap rounded-lg px-4 py-3 text-sm text-escuro-texto transition-colors hover:bg-escuro-linha hover:text-white;
+  }
+  .menu-item.ativo {
+    @apply bg-primaria font-semibold text-white hover:bg-primaria;
+  }
+  .menu-item svg {
+    @apply h-5 w-5 shrink-0;
+  }
+
+  /* Cards de indicadores (KPI) */
+  .kpi-rotulo {
+    @apply text-sm text-texto-suave;
+  }
+  .kpi-valor {
+    @apply mt-2 text-2xl font-bold xl:text-[26px];
+  }
+
+  /* Barras do gráfico */
+  .barra {
+    @apply w-3 rounded-t sm:w-5;
+  }
+  .barra-receita {
+    @apply barra bg-receita;
+  }
+  .barra-despesa {
+    @apply barra bg-despesa-grafico;
+  }
+
+  /* Barra de progresso */
+  .progresso {
+    @apply h-2.5 w-full overflow-hidden rounded-full bg-[#E9ECF3];
+  }
+  .progresso-preenchido {
+    @apply block h-full rounded-full bg-primaria;
+  }
+
+  /* Legenda */
+  .legenda {
+    @apply inline-block h-2.5 w-2.5 rounded-sm;
+  }
+
+  /* Lista de transações */
+  .transacao {
+    @apply flex items-center justify-between gap-4 border-b border-[#EEF1F6] py-3 last:border-0;
+  }
+}
