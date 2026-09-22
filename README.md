@@ -36,4 +36,4 @@ npm run build
 ```
 
 ## Autor
-Ryan Alves – FIAP
+Ryan de Almeida – FIAP
